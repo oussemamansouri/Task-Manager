@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Machine</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Load Require CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font CSS -->
+    <link href="assets/css/boxicon.min.css" rel="stylesheet">
+    <!-- Load Tempalte CSS -->
+    <link rel="stylesheet" href="assets/css/templatemo.css">
+    
+</head>
+
+<body>
+    <!-- Header -->
+    <nav id="main_nav" class="navbar navbar-expand-lg navbar-light bg-white shadow">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a class="navbar-brand h1" href="index.html">
+                <i class='bx bx-buildings bx-sm text-dark'></i>
+                <span class=" h4" id="steg">STEG</span> <span class=" h4" id="cti">CTI</span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-toggler-success" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="navbar-toggler-success">
+                <div class="flex-fill mx-xl-5 mb-2">
+                    <ul class="nav navbar-nav d-flex justify-content-between mx-xl-5 text-center text-dark">
+                        <li class="nav-item">
+                            <a class="dropbtn nav-link  rounded-pill px-3" href="tab.html">Tableau de Bord</a>
+                        </li>
+                        <li class="nav-item">
+                          <div class=" dropbtn  " href="agent.html"><div class="dropdown">
+                            Agents
+                            <div class="dropdown-content ">
+                              <a href="agent.html">Ajouter </a>
+                          <a href="consulter_a.php">Consulter </a>
+                              
+                            </div>
+                          </div></div>
+                      </li>
+                      <li class="nav-item">
+                        <div class=" dropbtn" href=""><div class="dropdown">
+                          Machines
+                          <div class="dropdown-content">
+                            <a href="machine.html">Ajouter</a>
+                            <a href="consulter_m.php">Consulter</a>
+                          </div>
+                        </div></div>
+                    </li>
+                    <li class="nav-item">
+                      <div class=" dropbtn" href=""><div class="dropdown">
+                        Taches
+                        <div class="dropdown-content">
+                          <a href="tache.html">Ajouter</a>
+                          <a href="consulter_t.php">Consulter</a>
+                          
+                        </div>
+                      </div></div>
+                  </li>
+                     
+                     
+                    </ul>
+                </div>
+                <div class="navbar align-self-center d-flex">
+                    <a class="nav-link" href="#"><i class='bx bx-bell bx-sm bx-tada-hover text-primary'></i></a>
+                    
+                  
+                    <div class="action">
+                        <div class="profile" onclick="menuToggle();">
+                            <a class="nav-link" href="#"><i class='bx bx-user-circle bx-sm text-primary'></i>
+                            </a>
+                        </div>
+                        <div class="menu">
+                          <h3>Bechir Ben Nasra<br><span>Chef de CTI</span></h3>
+                          <ul>
+                            <li>
+                              <img src="./assets/img/log-out.png" /><a href="#">Déconnexion</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <script>
+                        function menuToggle() {
+                          const toggleMenu = document.querySelector(".menu");
+                          toggleMenu.classList.toggle("active");
+                        }
+                      </script>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Close Header -->
+    <div class="wrapper"  >
+      <div class="inner">
+          
+          <div class="image-holder">
+              <img src="assets/img/machine.png" id="machine" alt="">
+          </div>
+          <form action="machine.php" method="post">
+              <div id="ajouter"><span class=" h3" id="steg">Ajouter une</span> <span class=" h3" id="cti">Machine</span></div><br><br>
+              <div class="form-wrapper">
+                  <input type="text" placeholder="Code de la machine" name="code" class="form-control" required>   
+              </div>
+
+              <div class="form-wrapper">
+                  <input type="text" placeholder="Nom de la machine" name="nom" class="form-control" required>    
+              </div>
+
+              <div class="form-wrapper">
+                  <input type="text" name="district" placeholder="Nom du district" class="form-control" required>
+              </div>
+
+              <div class="form-wrapper">
+                <label for="date" class="form-wrapper">Date d'arrivée:<br></label>
+                <input type="date" id="date" name="date" class="form-control" required>
+              </div>
+          
+              <button name="valider">Enregistrer</button>
+          </form>
+      </div>
+  </div>
+</body>
+
+</html>

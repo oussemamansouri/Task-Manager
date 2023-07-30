@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>alert</title>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<body>
+  
+  <button id="alert">success</button>
+  <button id="error">error</button>
+  <button id="delete">delete</button>
+
+  <script>
+    
+
+    document.getElementById('delete').addEventListener('click',function(){
+      swal({
+  title: "Are you sure?",
+  text: "Once deleted, you will not be able to recover this imaginary file!",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+})
+.then((willDelete) => {
+  if (willDelete) {
+    swal("Poof! Your imaginary file has been deleted!", {
+      icon: "success",
+    });
+  } else {
+    swal("Your imaginary file is safe!");
+  }
+});
+    })
+
+   
+    document.getElementById('alert').addEventListener('click',function(){
+      swal("Good job!", "You clicked the button!", "success");;
+    })
+
+    document.getElementById('error').addEventListener('click',function(){
+      swal("Oops...", "Adresse Mail ou Mots de passe incorrectes !", "error");;
+    })
+
+  </script>
+</body>
+</html>
